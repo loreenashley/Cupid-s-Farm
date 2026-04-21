@@ -29,7 +29,11 @@
     <h3>Add Rabbit</h3>
     <input type="text" id="name" placeholder="Rabbit Name">
     <input type="text" id="breed" placeholder="Breed">
+    <input type="text" id="colour" placeholder="colour">
+    <input type="text" id="gender" placeholder="gender">
     <input type="number" id="age" placeholder="Age (months)">
+    <input type="text" id="parents" placeholder="parents">
+    <input type="text" id="dob" placeholder="dob">
     <button onclick="addRabbit()">Add</button>
 
     <h3>Rabbit List</h3>
@@ -41,6 +45,7 @@
             <th>Gender</th>    
             <th>Age</th>
             <th>Parents</th>
+            <th>DOB</th>
         </tr>
     </table>
 
@@ -48,9 +53,13 @@
         function addRabbit() {
             let name = document.getElementById("name").value;
             let breed = document.getElementById("breed").value;
+            let colour = document.getElementById("breed").value;
+            let gender = document.getElementById("gender").value;
             let age = document.getElementById("age").value;
+            let parents = document.getElementById("parents").value;
+            let DOB = document.getElementById("dob").value;
 
-            if (name === "" || breed === "" || age === "") {
+            if (name === "" || breed === "" || colour === ""|| gender === ""|| age === ""|| parents === ""|| DOB === "") {
                 alert("Please fill all fields");
                 return;
             }
@@ -60,12 +69,20 @@
 
             row.insertCell(0).innerHTML = name;
             row.insertCell(1).innerHTML = breed;
-            row.insertCell(2).innerHTML = age;
+            row.insertCell(2).innerHTML = colour;
+            row.insertCell(3).innerHTML = gender;
+            row.insertCell(4).innerHTML = age;
+            row.insertCell(5).innerHTML = parents;
+            row.insertCell(6).innerHTML = DOB;
 
             // clear inputs
             document.getElementById("name").value = "";
             document.getElementById("breed").value = "";
+            document.getElementById("colour").value = "";
+            document.getElementById("gender").value = "";
             document.getElementById("age").value = "";
+            document.getElementById("parents").value = "";
+            document.getElementById("dob").value = "";
         }
     </script>
 
