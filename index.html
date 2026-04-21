@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rabbit Farm Tracker</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+        input, button {
+            margin: 5px;
+            padding: 8px;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+            width: 100%;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🐇 Rabbit Farm Tracker</h1>
+
+    <h3>Add Rabbit</h3>
+    <input type="text" id="name" placeholder="Rabbit Name">
+    <input type="text" id="breed" placeholder="Breed">
+    <input type="number" id="age" placeholder="Age (months)">
+    <button onclick="addRabbit()">Add</button>
+
+    <h3>Rabbit List</h3>
+    <table id="rabbitTable">
+        <tr>
+            <th>Name</th>
+            <th>Breed</th>
+            <th>Age</th>
+        </tr>
+    </table>
+
+    <script>
+        function addRabbit() {
+            let name = document.getElementById("name").value;
+            let breed = document.getElementById("breed").value;
+            let age = document.getElementById("age").value;
+
+            if (name === "" || breed === "" || age === "") {
+                alert("Please fill all fields");
+                return;
+            }
+
+            let table = document.getElementById("rabbitTable");
+            let row = table.insertRow();
+
+            row.insertCell(0).innerHTML = name;
+            row.insertCell(1).innerHTML = breed;
+            row.insertCell(2).innerHTML = age;
+
+            // clear inputs
+            document.getElementById("name").value = "";
+            document.getElementById("breed").value = "";
+            document.getElementById("age").value = "";
+        }
+    </script>
+
+</body>
+</html>        
